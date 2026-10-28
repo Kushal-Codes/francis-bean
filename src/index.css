@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --color-cream-paper: #FFF7EA;
+    --color-peach: #F1C5A8;
+    --color-cocoa: #49352D;
+    --color-terracotta: #BB795F;
+    --color-butter: #F1CF82;
+    --color-seafoam: #BDD6C7;
+  }
+
+  html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+  body {
+    background-color: #FFF7EA;
+    color: #49352D;
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-image: 
+      radial-gradient(#F1C5A8 0.65px, transparent 0.65px),
+      radial-gradient(#BB795F 0.5px, #FFF7EA 0.5px);
+    background-size: 32px 32px;
+    background-position: 0 0, 16px 16px;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, .font-serif {
+    font-family: 'Fraunces', Georgia, serif;
+    font-feature-settings: "liga" 1, "kern" 1;
+  }
+
+  .font-hand {
+    font-family: 'Kalam', 'Caveat', cursive;
+  }
+}
+
+@layer components {
+  /* Hand-drawn tactile button */
+  .btn-doodle {
+    @apply inline-flex items-center justify-center font-display font-semibold tracking-wide px-6 py-3.5 
+           rounded-2xl border-2 border-cocoa bg-peach text-cocoa transition-all duration-200
+           shadow-doodle hover:shadow-doodle-hover hover:translate-x-[2px] hover:translate-y-[2px]
+           active:shadow-none active:translate-x-[3px] active:translate-y-[4px] cursor-pointer;
+  }
+
+  .btn-doodle-cream {
+    @apply inline-flex items-center justify-center font-display font-semibold tracking-wide px-6 py-3.5 
+           rounded-2xl border-2 border-cocoa bg-cream-warm text-cocoa transition-all duration-200
+           shadow-doodle hover:shadow-doodle-hover hover:translate-x-[2px] hover:translate-y-[2px]
+           active:shadow-none active:translate-x-[3px] active:translate-y-[4px] cursor-pointer;
+  }
+
+  .btn-doodle-butter {
+    @apply inline-flex items-center justify-center font-display font-semibold tracking-wide px-6 py-3.5 
+           rounded-2xl border-2 border-cocoa bg-butter text-cocoa transition-all duration-200
+           shadow-doodle hover:shadow-doodle-hover hover:translate-x-[2px] hover:translate-y-[2px]
+           active:shadow-none active:translate-x-[3px] active:translate-y-[4px] cursor-pointer;
+  }
+
+  /* Hand-drawn card frame with cocoa outline */
+  .card-doodle {
+    @apply border-2 border-cocoa bg-cream-warm rounded-3xl p-6 shadow-doodle transition-all duration-300;
+  }
+
+  .card-doodle-peach {
+    @apply border-2 border-cocoa bg-peach-light rounded-3xl p-6 shadow-doodle transition-all duration-300;
+  }
+
+  /* Paper ticket notches */
+  .ticket-border {
+    position: relative;
+    border: 2px dashed #49352D;
+    background-color: #FCEEE6;
+  }
+
+  /* Subtle tape strips for scrapbook polaroids */
+  .tape-strip {
+    background-color: rgba(241, 207, 130, 0.7);
+    border: 1px dashed rgba(73, 53, 45, 0.3);
+    box-shadow: 0 1px 3px rgba(73, 53, 45, 0.1);
+  }
+}
+
+/* Custom Scrollbar in Cocoa / Peach */
+::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: #FFF7EA;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #F1C5A8;
+  border: 2px solid #FFF7EA;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #BB795F;
+}
+
+/* Reduced motion accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
